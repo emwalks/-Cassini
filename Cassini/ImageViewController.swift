@@ -14,11 +14,24 @@ class ImageViewController: UIViewController
     var imageURL: URL? {
         didSet {
             //if a new model has been set - e.g. new image URL AND we are on screen (if view.window != nil)  then the image is cleared and the fetch image func is run
-            imageView.image = nil
+            image = nil
+            
             //if a view is on screen it will have a window var, thus a quick was to check we are on screen
             if view.window != nil {
                 fetchImage()
             }
+        }
+    }
+    
+    //by creating this computed property we don't have to call code repeatedly
+    private var image: UIImage? {
+        get {
+            return imageView.image
+        }
+        set {
+            imageView.image = newValue
+            imageView.sizeToFit()
+            scrollView.contentSize = imageView.frame.size
         }
     }
     
@@ -31,8 +44,14 @@ class ImageViewController: UIViewController
         
     }
     
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.addSubview(imageView)
+        }
+    }
+    
     //this is my view
-    @IBOutlet var imageView: UIImageView!
+    var imageView = UIImageView()
     
     //we are making this a func as it could be fetching an image over the network
     private func fetchImage() {
@@ -41,7 +60,7 @@ class ImageViewController: UIViewController
             //if there's an image in my Data use the image for the image view
             let urlContents = try? Data(contentsOf: url)
             if let imageData = urlContents {
-                imageView.image = UIImage(data: imageData)
+                image = UIImage(data: imageData)
             }
         }
     }
