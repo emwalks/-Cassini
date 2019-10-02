@@ -6,10 +6,11 @@ This repo keeps track of my progress following Stanford's CS193P course (resourc
 
 ## Cassini
 
-### Project 3: 
+### Project 3: An app for downloading and viewing high resolution images from Nasa's Cassini Probe
 
 Created in Xcode 10. 
 
 Techniques implemented include:
 
-- UIScrollView
+- Scroll View & Zoom
+
