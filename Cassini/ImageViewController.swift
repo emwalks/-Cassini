@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ImageViewController: UIViewController
+class ImageViewController: UIViewController, UIScrollViewDelegate
 {
     //this is my model
     var imageURL: URL? {
         didSet {
             //if a new model has been set - e.g. new image URL AND we are on screen (if view.window != nil)  then the image is cleared and the fetch image func is run
+              //if we didn't have the computed proprty we would need the size to fit and content size here too
             image = nil
             
             //if a view is on screen it will have a window var, thus a quick was to check we are on screen
@@ -44,10 +45,20 @@ class ImageViewController: UIViewController
         
     }
     
+    //here is where the scrollview is set up in code
+    //if we didn't have the computed proprty we would need the size to fit and content size here too
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
+            scrollView.minimumZoomScale = 1/25
+            scrollView.maximumZoomScale = 2.0
+            scrollView.delegate = self
             scrollView.addSubview(imageView)
         }
+    }
+    
+    //this is the objc func to allow zooming when your class is a UIViewDelegate
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
     }
     
     //this is my view
