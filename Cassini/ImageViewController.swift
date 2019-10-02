@@ -37,7 +37,20 @@ class ImageViewController: UIViewController
     //we are making this a func as it could be fetching an image over the network
     private func fetchImage() {
         if let url = imageURL {
-            
+            //make the Data (contentsOf: <#T##URL#>) throws optional so it will return nil if an error rather than implementing error catch
+            //if there's an image in my Data use the image for the image view
+            let urlContents = try? Data(contentsOf: url)
+            if let imageData = urlContents {
+                imageView.image = UIImage(data: imageData)
+            }
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if imageURL == nil {
+            imageURL = DemoURLs.stanford
+        }
+    }
+    
 }

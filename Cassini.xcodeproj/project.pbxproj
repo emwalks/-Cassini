@@ -12,6 +12,8 @@
 		98ABDDC023439F5A00FAA836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98ABDDBF23439F5A00FAA836 /* Assets.xcassets */; };
 		98ABDDC323439F5A00FAA836 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98ABDDC123439F5A00FAA836 /* LaunchScreen.storyboard */; };
 		98ABDDCD2343A73E00FAA836 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ABDDCC2343A73E00FAA836 /* ImageViewController.swift */; };
+		98ABDDCF2344D00900FAA836 /* DemoURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ABDDCE2344D00900FAA836 /* DemoURLs.swift */; };
+		98ABDDD12344D57A00FAA836 /* oval.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 98ABDDD02344D57A00FAA836 /* oval.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		98ABDDC223439F5A00FAA836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98ABDDC423439F5A00FAA836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98ABDDCC2343A73E00FAA836 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		98ABDDCE2344D00900FAA836 /* DemoURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoURLs.swift; sourceTree = "<group>"; };
+		98ABDDD02344D57A00FAA836 /* oval.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = oval.jpg; path = ../../../Downloads/oval.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				98ABDDBC23439F5900FAA836 /* Main.storyboard */,
 				98ABDDCC2343A73E00FAA836 /* ImageViewController.swift */,
+				98ABDDCE2344D00900FAA836 /* DemoURLs.swift */,
+				98ABDDD02344D57A00FAA836 /* oval.jpg */,
 				98ABDDCB2343A65C00FAA836 /* Supporting Files */,
 				98ABDDC423439F5A00FAA836 /* Info.plist */,
 			);
@@ -131,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98ABDDC323439F5A00FAA836 /* LaunchScreen.storyboard in Resources */,
+				98ABDDD12344D57A00FAA836 /* oval.jpg in Resources */,
 				98ABDDC023439F5A00FAA836 /* Assets.xcassets in Resources */,
 				98ABDDBE23439F5900FAA836 /* Main.storyboard in Resources */,
 			);
@@ -145,6 +152,7 @@
 			files = (
 				98ABDDCD2343A73E00FAA836 /* ImageViewController.swift in Sources */,
 				98ABDDB923439F5900FAA836 /* AppDelegate.swift in Sources */,
+				98ABDDCF2344D00900FAA836 /* DemoURLs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,7 +5,34 @@
 	<key>logFormatVersion</key>
 	<integer>10</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>247F5CC0-3844-4DC4-9166-F0CC76DA5F50</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>247F5CC0-3844-4DC4-9166-F0CC76DA5F50.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>Cassini-gvvuxeizdwequueuewdbizpvpifg</string>
+			<key>timeStartedRecording</key>
+			<real>591713721.43025601</real>
+			<key>timeStoppedRecording</key>
+			<real>591713724.70354795</real>
+			<key>title</key>
+			<string>Build target Cassini</string>
+			<key>uniqueIdentifier</key>
+			<string>247F5CC0-3844-4DC4-9166-F0CC76DA5F50</string>
+		</dict>
+	</dict>
 	<key>preserveOldLogs</key>
 	<true/>
 </dict>
