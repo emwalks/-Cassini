@@ -5,17 +5,53 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Image View Controller-->
+        <!--Cassini View Controller-->
         <scene sceneID="iur-j2-hIp">
             <objects>
-                <viewController id="caW-HM-WKo" customClass="ImageViewController" customModule="Cassini" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="caW-HM-WKo" customClass="CassiniViewController" customModule="Cassini" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tih-oX-tD8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZmR-PJ-PhU">
+                                <rect key="frame" x="163" y="398" width="88" height="154"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c99-7D-1D8">
+                                        <rect key="frame" x="0.0" y="0.0" width="88" height="46"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Cassini"/>
+                                        <connections>
+                                            <segue destination="TFa-qj-RBG" kind="showDetail" identifier="Cassini" id="pZ9-lf-okG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qjw-wh-Guc">
+                                        <rect key="frame" x="0.0" y="54" width="88" height="46"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Earth"/>
+                                        <connections>
+                                            <segue destination="TFa-qj-RBG" kind="showDetail" identifier="Earth" id="DCc-Cu-GiK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uz-42-3Ck">
+                                        <rect key="frame" x="0.0" y="108" width="88" height="46"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Saturn"/>
+                                        <connections>
+                                            <segue destination="TFa-qj-RBG" kind="showDetail" identifier="Saturn" id="M0l-lj-2tD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZmR-PJ-PhU" firstAttribute="centerX" secondItem="CnM-7s-5ZT" secondAttribute="centerX" id="JRJ-al-K3E"/>
+                            <constraint firstItem="ZmR-PJ-PhU" firstAttribute="centerY" secondItem="CnM-7s-5ZT" secondAttribute="centerY" id="Qgg-Uf-8eL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CnM-7s-5ZT"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ovi-bK-h3E"/>
@@ -51,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAn-p1-03Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-612" y="736"/>
+            <point key="canvasLocation" x="-281" y="835"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="xAg-1M-LlD">
@@ -85,4 +121,7 @@
             <point key="canvasLocation" x="-636.23188405797111" y="69.642857142857139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="M0l-lj-2tD"/>
+    </inferredMetricsTieBreakers>
 </document>

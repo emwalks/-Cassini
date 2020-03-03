@@ -14,7 +14,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
     var imageURL: URL? {
         didSet {
             //if a new model has been set - e.g. new image URL AND we are on screen (if view.window != nil)  then the image is cleared and the fetch image func is run
-              //if we didn't have the computed proprty we would need the size to fit and content size here too
+            //if we didn't have the computed proprty we would need the size to fit and content size here too
             image = nil
             
             //if a view is on screen it will have a window var, thus a quick was to check we are on screen
@@ -32,7 +32,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
         set {
             imageView.image = newValue
             imageView.sizeToFit()
-            scrollView.contentSize = imageView.frame.size
+            scrollView?.contentSize = imageView.frame.size
         }
     }
     
@@ -69,9 +69,21 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
         if let url = imageURL {
             //make the Data (contentsOf: <#T##URL#>) throws optional so it will return nil if an error rather than implementing error catch
             //if there's an image in my Data use the image for the image view
-            let urlContents = try? Data(contentsOf: url)
-            if let imageData = urlContents {
-                image = UIImage(data: imageData)
+            //this is causing app to hang as it calls for images
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                let urlContents = try? Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    //this image Data setting above is all UI stuff - needs to be on main
+                    //url == self?.imageURL is checking that when url returned is still the imageURL i.e. we haven't since clicked another button
+                    if let imageData = urlContents, url == self?.imageURL {
+                        // here self does not have a pointer to the closure so won't have a leak but
+                        // what if this takes a long time? maybe the VC no longer exists (back clicked)
+                        // this VC will be kept in the heap until this is completed - need weak self
+                        self?.image = UIImage(data: imageData)
+                    }
+                    
+                }
+                
             }
         }
     }
