@@ -33,6 +33,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
             imageView.image = newValue
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size
+            spinner?.stopAnimating()
         }
     }
     
@@ -44,6 +45,9 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
         }
         
     }
+    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     
     //here is where the scrollview is set up in code
     //if we didn't have the computed proprty we would need the size to fit and content size here too
@@ -67,6 +71,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
     //we are making this a func as it could be fetching an image over the network
     private func fetchImage() {
         if let url = imageURL {
+            spinner.startAnimating()
             //make the Data (contentsOf: <#T##URL#>) throws optional so it will return nil if an error rather than implementing error catch
             //if there's an image in my Data use the image for the image view
             //this is causing app to hang as it calls for images

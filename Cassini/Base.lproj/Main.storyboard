@@ -68,21 +68,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="CcL-Wh-oO9">
+                                <rect key="frame" x="188.5" y="456.5" width="37" height="37"/>
+                                <color key="color" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHw-E7-0rT">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="CcL-Wh-oO9" firstAttribute="centerX" secondItem="sRM-K8-far" secondAttribute="centerX" id="3ow-hM-z3N"/>
                             <constraint firstItem="pHw-E7-0rT" firstAttribute="trailing" secondItem="wHC-WH-mSY" secondAttribute="trailing" id="At1-uk-dHB"/>
                             <constraint firstAttribute="bottom" secondItem="pHw-E7-0rT" secondAttribute="bottom" id="Aux-JT-Ne0"/>
                             <constraint firstItem="pHw-E7-0rT" firstAttribute="top" secondItem="wHC-WH-mSY" secondAttribute="top" id="MdE-jb-4am"/>
                             <constraint firstItem="pHw-E7-0rT" firstAttribute="leading" secondItem="wHC-WH-mSY" secondAttribute="leading" id="ipM-jG-o5Y"/>
+                            <constraint firstItem="CcL-Wh-oO9" firstAttribute="centerY" secondItem="sRM-K8-far" secondAttribute="centerY" id="yyT-Q3-nWE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sRM-K8-far"/>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="pHw-E7-0rT" id="Zoc-be-Gd9"/>
+                        <outlet property="spinner" destination="CcL-Wh-oO9" id="VnB-CU-Y6h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAn-p1-03Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
