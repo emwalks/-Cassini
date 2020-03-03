@@ -12,5 +12,8 @@ Created in Xcode 10.
 
 Techniques implemented include:
 
+- Multithreaded operations on userinitiated global queue and UI elements in main queue
+- Activity spinner for duration of HTTP request until image set
 - Scroll View & Zoom
+- Embedding a detail view of a split view in a navigation view
 
